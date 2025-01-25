@@ -1,0 +1,88 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #000000;
+  margin: 0;
+  padding: 20px;
+  line-height: 1;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background: #000000;
+  color: #ffffff;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.about {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 20px;
+  font-size: 5vw;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  color: #000000;
+  border: 2px solid #000000;
+  background: #ffffff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.dark-mode .btn {
+  color: #ffffff;
+  border-color: #ffffff;
+  background-color: #000000;
+}
+
+.dark-mode .btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.divider {
+  width: 60%;
+  height: 3px;
+  background-color: #000000;
+  margin: 20px 0;
+  transition: background-color 0.3s;
+}
+
+/*# sourceMappingURL=constact.css.map */

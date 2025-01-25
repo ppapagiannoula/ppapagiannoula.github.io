@@ -1,0 +1,121 @@
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Fjalla One", sans-serif;
+  background: #ffffff;
+  color: #000000;
+  margin: 0;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background: #000000;
+  color: #ffffff;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.container {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: block;
+  position: absolute;
+  max-width: 250px;
+}
+
+.button {
+  float: left;
+  position: relative;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-10deg);
+  color: inherit;
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 {
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 48px;
+  margin: 0;
+  line-height: 48px;
+  letter-spacing: 2px;
+}
+
+.title {
+  transform: translateX(-50%) rotate(-10deg);
+  display: block;
+  float: left;
+  left: 50%;
+  position: relative;
+}
+.title span {
+  transform: skew(-10deg);
+  display: block;
+  float: left;
+  text-shadow: #8ace00 1px 1px, #8ace00 2px 2px, #8ace00 3px 3px, #8ace00 4px 4px, #8ace00 5px 5px, #8ace00 6px 6px;
+  min-width: 10px;
+  min-height: 10px;
+  position: relative;
+}
+
+.title:nth-child(1), .title:nth-child(2) {
+  color: inherit;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  color: #000000;
+  border: 2px solid #000000;
+  background: #ffffff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.dark-mode .btn {
+  color: #ffffff;
+  border-color: #ffffff;
+  background-color: #000000;
+}
+
+.dark-mode .btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 42px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
