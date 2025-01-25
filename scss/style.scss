@@ -122,8 +122,26 @@ h1 {
   color: $black;
 }
 
+.end {
+  position: relative;
+  bottom: -50px;
+  left: -25%;
+  transform: translateX(-50%) rotate(-10deg);
+  color: inherit;
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 42px;
+  }
+
+  .end {
+    left: 50%;
   }
 }
