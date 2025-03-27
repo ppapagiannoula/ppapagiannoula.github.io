@@ -1,7 +1,22 @@
-const darkModeToggle = document.getElementById('darkModeToggle');
-const body = document.body;
+document.addEventListener("DOMContentLoaded", () => {
+    const darkModeToggle = document.getElementById("darkModeToggle");
+    const body = document.body;
 
-darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    darkModeToggle.textContent = body.classList.contains('dark-mode') ? 'Dark Mode' : 'Light Mode';
+    if (localStorage.getItem("darkMode") === "enabled") {
+        body.classList.add("dark-mode");
+        darkModeToggle.textContent = "Dark Mode";
+    } else {
+        darkModeToggle.textContent = "Light Mode";
+    }
+
+    darkModeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "enabled");
+            darkModeToggle.textContent = "Dark Mode";
+        } else {
+            localStorage.setItem("darkMode", "disabled");
+            darkModeToggle.textContent = "Light Mode";
+        }
+    });
 });
