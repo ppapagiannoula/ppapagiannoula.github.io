@@ -1,12 +1,7 @@
-const validPaths = [
-    '/',                
-    '/about/about.html',
-    '/contact/contact.html',
-    '/end/end.html'
-  ];
+const validPaths = ["/", "/about", "/contact", "/end"];
 
-  const currentPath = window.location.pathname;
-  const isValidPath = validPaths.some(path => currentPath.startsWith(path));
-  if (!isValidPath) {
-    window.location.href = '/404.html';
-  }
+const currentPath = window.location.pathname;
+
+if (!validPaths.includes(currentPath) && currentPath !== "/404.html") {
+  window.location.href = "/404.html";
+}
