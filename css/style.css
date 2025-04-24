@@ -134,5 +134,8 @@ h1 {
     left: 50%;
   }
 }
+#page-structure {
+  height: 100vh;
+}
 
 /*# sourceMappingURL=style.css.map */
