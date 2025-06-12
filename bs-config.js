@@ -10,9 +10,9 @@ module.exports = {
       },
       require("connect-history-api-fallback")({
         rewrites: [
-          { from: /^\/about$/, to: "/about/about.html" },
-          { from: /^\/contact$/, to: "/contact/contact.html" },
-          { from: /^\/end$/, to: "/end/end.html" },
+          { from: /^\/about$/, to: "/about/index.html" },
+          { from: /^\/contact$/, to: "/contact/index.html" },
+          { from: /^\/end$/, to: "/end/index.html" },
         ],
         index: "/404.html"
       })
