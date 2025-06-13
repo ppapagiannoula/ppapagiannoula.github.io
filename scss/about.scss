@@ -12,7 +12,7 @@ body {
     color: $black;
     margin: 0;
     padding: 20px;
-    line-height: 1;
+    line-height: 1.5;
     transition: background 0.3s, color 0.3s;
 }
 
@@ -38,6 +38,29 @@ body {
     font-size: 5vw;
     max-width: 800px;
     margin: 0 auto;
+    will-change: transform;
+
+    span {
+        display: inline;
+        will-change: transform, opacity;
+        line-height: 1.4;
+        white-space: normal;
+
+        .word {
+            display: inline;
+            white-space: normal;
+        }
+
+        .char {
+            display: inline-block;
+            will-change: transform, opacity;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $green;
+            }
+        }
+    }
 }
 
 .navigation {
@@ -58,22 +81,25 @@ body {
     font-size: 1rem;
     font-weight: bold;
     transition: all 0.3s ease;
-}
+    will-change: transform;
+    cursor: pointer;
 
-.btn:hover {
-    background-color: $black;
-    color: $white;
+    &:hover {
+        background-color: $black;
+        color: $white;
+        transform: scale(1.05);
+    }
 }
 
 .dark-mode .btn {
     color: $white;
     border-color: $white;
     background-color: $black;
-}
 
-.dark-mode .btn:hover {
-    background-color: $white;
-    color: $black;
+    &:hover {
+        background-color: $white;
+        color: $black;
+    }
 }
 
 .divider {

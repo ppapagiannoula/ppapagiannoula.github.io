@@ -1,7 +1,5 @@
-// Register GSAP plugins
 gsap.registerPlugin(TextPlugin);
 
-// Split text into characters
 function splitText(element) {
     const text = element.textContent;
     element.textContent = '';
@@ -14,12 +12,9 @@ function splitText(element) {
     }
 }
 
-// Initialize animations
 function initAnimations() {
-    // Split text for animation
     document.querySelectorAll('.title[data-text]').forEach(splitText);
 
-    // Create timeline for title animation
     const titleTimeline = gsap.timeline({
         defaults: {
             ease: "back.out(1.7)",
@@ -27,21 +22,63 @@ function initAnimations() {
         }
     });
 
-    // Animate each character in the titles
     titleTimeline
+        .from(".container", {
+            scale: 0.8,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        })
         .from(".title span", {
             opacity: 0,
             y: 80,
-            stagger: 0.05
+            stagger: 0.05,
+            duration: 0.8
         })
         .from(".button", {
             opacity: 0,
             y: 20,
-            duration: 0.3
+            duration: 0.5,
+            onComplete: () => {
+                gsap.to(".button", {
+                    scale: 1.1,
+                    duration: 0.3,
+                    yoyo: true,
+                    repeat: -1,
+                    ease: "power1.inOut"
+                });
+            }
         }, "-=0.2");
+
+    gsap.to(".container", {
+        y: 20,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut"
+    });
+
+    document.querySelectorAll('.title span').forEach(span => {
+        span.addEventListener('mouseenter', () => {
+            gsap.to(span, {
+                scale: 1.2,
+                color: "#8ace00",
+                duration: 0.3,
+                ease: "back.out(1.7)"
+            });
+        });
+
+        span.addEventListener('mouseleave', () => {
+            gsap.to(span, {
+                scale: 1,
+                color: "inherit",
+                duration: 0.3,
+                ease: "back.out(1.7)"
+            });
+        });
+    });
 }
 
-// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initAnimations();
 });

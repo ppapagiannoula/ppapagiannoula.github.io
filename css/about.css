@@ -8,7 +8,7 @@ body {
   color: #000000;
   margin: 0;
   padding: 20px;
-  line-height: 1;
+  line-height: 1.5;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -34,6 +34,25 @@ body {
   font-size: 5vw;
   max-width: 800px;
   margin: 0 auto;
+  will-change: transform;
+}
+.about span {
+  display: inline;
+  will-change: transform, opacity;
+  line-height: 1.4;
+  white-space: normal;
+}
+.about span .word {
+  display: inline;
+  white-space: normal;
+}
+.about span .char {
+  display: inline-block;
+  will-change: transform, opacity;
+  transition: color 0.3s ease;
+}
+.about span .char:hover {
+  color: #8ace00;
 }
 
 .navigation {
@@ -54,11 +73,13 @@ body {
   font-size: 1rem;
   font-weight: bold;
   transition: all 0.3s ease;
+  will-change: transform;
+  cursor: pointer;
 }
-
 .btn:hover {
   background-color: #000000;
   color: #ffffff;
+  transform: scale(1.05);
 }
 
 .dark-mode .btn {
@@ -66,7 +87,6 @@ body {
   border-color: #ffffff;
   background-color: #000000;
 }
-
 .dark-mode .btn:hover {
   background-color: #ffffff;
   color: #000000;

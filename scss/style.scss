@@ -77,7 +77,7 @@ h1 {
 
   span {
     transform: skew(-10deg);
-    display: inline-block;
+    display: inline;
     float: left;
     text-shadow: $green 1px 1px, $green 2px 2px, $green 3px 3px, $green 4px 4px, $green 5px 5px, $green 6px 6px;
     min-width: 10px;
@@ -121,20 +121,6 @@ h1 {
 .dark-mode .btn:hover {
   background-color: $white;
   color: $black;
-}
-
-.end {
-  position: relative;
-  bottom: -50px;
-  left: -25%;
-  transform: translateX(-50%) rotate(-10deg);
-  color: inherit;
-  opacity: 1;
-  visibility: visible;
-  cursor: pointer;
-  font-size: 24px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 @media (max-width: 768px) {

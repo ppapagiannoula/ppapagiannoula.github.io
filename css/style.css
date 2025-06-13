@@ -145,7 +145,7 @@ h1 {
 }
 .title span {
   transform: skew(-10deg);
-  display: inline-block;
+  display: inline;
   float: left;
   text-shadow: #8ace00 1px 1px, #8ace00 2px 2px, #8ace00 3px 3px, #8ace00 4px 4px, #8ace00 5px 5px, #8ace00 6px 6px;
   min-width: 10px;
@@ -185,20 +185,6 @@ h1 {
 .dark-mode .btn:hover {
   background-color: #ffffff;
   color: #000000;
-}
-
-.end {
-  position: relative;
-  bottom: -50px;
-  left: -25%;
-  transform: translateX(-50%) rotate(-10deg);
-  color: inherit;
-  opacity: 1;
-  visibility: visible;
-  cursor: pointer;
-  font-size: 24px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 @media (max-width: 768px) {
