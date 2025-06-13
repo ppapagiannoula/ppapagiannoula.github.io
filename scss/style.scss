@@ -50,6 +50,12 @@ body {
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateX(-50%) rotate(-10deg) scale(1.1);
+  }
 }
 
 h1 {
@@ -67,15 +73,17 @@ h1 {
   float: left;
   left: 50%;
   position: relative;
+  will-change: transform;
 
   span {
     transform: skew(-10deg);
-    display: block;
+    display: inline-block;
     float: left;
     text-shadow: $green 1px 1px, $green 2px 2px, $green 3px 3px, $green 4px 4px, $green 5px 5px, $green 6px 6px;
     min-width: 10px;
     min-height: 10px;
     position: relative;
+    will-change: transform, opacity;
   }
 }
 

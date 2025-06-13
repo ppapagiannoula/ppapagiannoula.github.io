@@ -119,6 +119,11 @@ body {
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.button:hover {
+  transform: translateX(-50%) rotate(-10deg) scale(1.1);
 }
 
 h1 {
@@ -136,15 +141,17 @@ h1 {
   float: left;
   left: 50%;
   position: relative;
+  will-change: transform;
 }
 .title span {
   transform: skew(-10deg);
-  display: block;
+  display: inline-block;
   float: left;
   text-shadow: #8ace00 1px 1px, #8ace00 2px 2px, #8ace00 3px 3px, #8ace00 4px 4px, #8ace00 5px 5px, #8ace00 6px 6px;
   min-width: 10px;
   min-height: 10px;
   position: relative;
+  will-change: transform, opacity;
 }
 
 .title:nth-child(1), .title:nth-child(2) {
