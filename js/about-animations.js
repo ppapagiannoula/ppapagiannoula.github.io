@@ -11,17 +11,14 @@ function initAboutAnimations() {
         const text = aboutText.textContent;
         aboutText.textContent = '';
         
-        // Split text into words while preserving spaces and punctuation
         const words = text.split(/(\s+)/);
         words.forEach((word) => {
             if (word.trim() === '') {
-                // If it's just whitespace, add it as is
                 aboutText.appendChild(document.createTextNode(word));
             } else {
                 const wordSpan = document.createElement('span');
                 wordSpan.className = 'word';
                 
-                // Split each word into characters
                 for (let i = 0; i < word.length; i++) {
                     const charSpan = document.createElement('span');
                     charSpan.className = 'char';
