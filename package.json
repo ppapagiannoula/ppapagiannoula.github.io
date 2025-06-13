@@ -15,5 +15,8 @@
     "connect-history-api-fallback": "^2.0.0",
     "lite-server": "^2.6.1",
     "sass": "^1.83.4"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0"
   }
 }

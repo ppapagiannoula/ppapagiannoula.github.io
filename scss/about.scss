@@ -25,12 +25,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-}
-
-.header {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
+    padding-top: 80px;
 }
 
 .about {
@@ -89,8 +84,16 @@ body {
     transition: background-color 0.3s;
 }
 
+.dark-mode .divider {
+    background-color: $white;
+}
+
 @media (max-width: 768px) {
     .about {
-      font-size: 12vw;
+        font-size: 12vw;
     }
-  }
+    
+    .page-wrapper {
+        padding-top: 60px;
+    }
+}

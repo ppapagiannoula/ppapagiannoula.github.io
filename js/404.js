@@ -1,4 +1,4 @@
-const validPaths = ["/", "/about", "/contact", "/end"];
+const validPaths = ["/", "/about", "/contact"];
 
 const currentPath = window.location.pathname;
 

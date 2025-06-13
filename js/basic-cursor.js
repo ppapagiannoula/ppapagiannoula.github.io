@@ -1,4 +1,3 @@
-
 class CircleAndDot {
     constructor() {
         this.root = document.body
@@ -58,7 +57,7 @@ class CircleAndDot {
         if (event.target.localName === 'button' ||
             event.target.localName === 'a' ||
             event.target.onclick !== null ||
-            event.target.className.includes('curzr-hover')) {
+            (event.target.className && typeof event.target.className === 'string' && event.target.className.includes('curzr-hover'))) {
             this.hover()
         } else {
             this.hoverout()
