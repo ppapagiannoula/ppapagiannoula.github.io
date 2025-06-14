@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
-    "build:css": "sass scss/style.scss:css/style.css scss/about.scss:css/about.css scss/404.scss:css/404.css",
-    "watch:css": "sass --watch scss/style.scss:css/style.css scss/about.scss:css/about.css scss/404.scss:css/404.css",
+    "build:css": "sass scss/style.scss:css/style.css scss/404.scss:css/404.css",
+    "watch:css": "sass --watch scss/style.scss:css/style.css scss/404.scss:css/404.css",
     "start": "lite-server -c bs-config.js"
   },
   "keywords": [],

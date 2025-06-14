@@ -41,27 +41,6 @@ body {
     max-width: 300px;
   }
 
-  .button {
-    float: left;
-    position: relative;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-10deg);
-    color: inherit;
-    opacity: 1;
-    visibility: visible;
-    cursor: pointer;
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: translateX(-50%) rotate(-10deg) scale(1.1);
-    }
-  }
-
   h1 {
     color: inherit;
     text-transform: uppercase;
@@ -94,7 +73,6 @@ body {
 
 #about {
   .about {
-    max-width: 800px;
     margin: 0 auto;
     text-align: center;
     font-size: 5vw;
@@ -125,12 +103,30 @@ body {
 #contact {
   .contact {
     text-align: center;
-    max-width: 600px;
     margin: 0 auto;
 
-    h2 {
-      font-size: 2.5rem;
+    h1 {
+      font-size: 5vw;
+      font-weight: normal;
+      line-height: 1.4;
       margin-bottom: 2rem;
+      display: block;
+      span {
+        display: inline;
+        white-space: normal;
+        .word {
+          display: inline;
+          white-space: normal;
+        }
+        .char {
+          display: inline-block;
+          will-change: transform, opacity;
+          transition: color 0.3s ease;
+          &:hover {
+            color: $green;
+          }
+        }
+      }
     }
 
     .contact-links {
@@ -195,7 +191,7 @@ body {
 @media (max-width: 768px) {
   #home {
     h1 {
-      font-size: 42px;
+      font-size: 30px;
     }
   }
 
@@ -206,6 +202,11 @@ body {
   }
 
   #contact {
+    .contact {
+      h1 {
+        font-size: 12vw;
+      }
+    }
     .contact-links {
       gap: 1rem;
     }

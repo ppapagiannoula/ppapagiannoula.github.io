@@ -12,6 +12,63 @@ function splitText(element) {
     }
 }
 
+function initTextReveal(element) {
+    if (!element) return;
+    const text = element.textContent;
+    element.textContent = '';
+    const words = text.split(/(\s+)/);
+    words.forEach((word) => {
+        if (word.trim() === '') {
+            element.appendChild(document.createTextNode(word));
+        } else {
+            const wordSpan = document.createElement('span');
+            wordSpan.className = 'word';
+            for (let i = 0; i < word.length; i++) {
+                const charSpan = document.createElement('span');
+                charSpan.className = 'char';
+                charSpan.textContent = word[i];
+                charSpan.style.display = 'inline-block';
+                wordSpan.appendChild(charSpan);
+            }
+            element.appendChild(wordSpan);
+        }
+    });
+
+    gsap.from(element.querySelectorAll('.char'), {
+        opacity: 0,
+        y: 20,
+        stagger: 0.02,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+            trigger: element,
+            start: "top center",
+            toggleActions: "play none none reverse"
+        }
+    });
+
+    element.querySelectorAll('.char').forEach(char => {
+        char.addEventListener('mouseenter', () => {
+            gsap.to(char, {
+                scale: 1.2,
+                color: "#8ace00",
+                duration: 0.3,
+                ease: "back.out(1.7)",
+                overwrite: 'auto'
+            });
+        });
+        char.addEventListener('mouseleave', () => {
+            gsap.to(char, {
+                scale: 1,
+                color: "inherit",
+                duration: 0.3,
+                ease: "back.out(1.7)",
+                overwrite: 'auto'
+            });
+        });
+    });
+}
+
 function initAnimations() {
     const homeSection = document.querySelector('#home');
     if (homeSection) {
@@ -67,43 +124,7 @@ function initAnimations() {
     const aboutSection = document.querySelector('#about');
     if (aboutSection) {
         const aboutText = aboutSection.querySelector('.about span');
-        if (aboutText) {
-            const text = aboutText.textContent;
-            aboutText.textContent = '';
-            
-            const words = text.split(/(\s+)/);
-            words.forEach((word) => {
-                if (word.trim() === '') {
-                    aboutText.appendChild(document.createTextNode(word));
-                } else {
-                    const wordSpan = document.createElement('span');
-                    wordSpan.className = 'word';
-                    
-                    for (let i = 0; i < word.length; i++) {
-                        const charSpan = document.createElement('span');
-                        charSpan.className = 'char';
-                        charSpan.textContent = word[i];
-                        charSpan.style.display = 'inline-block';
-                        wordSpan.appendChild(charSpan);
-                    }
-                    
-                    aboutText.appendChild(wordSpan);
-                }
-            });
-
-            gsap.from(aboutText.querySelectorAll('.char'), {
-                opacity: 0,
-                y: 20,
-                stagger: 0.02,
-                duration: 0.5,
-                ease: "back.out(1.7)",
-                scrollTrigger: {
-                    trigger: aboutSection,
-                    start: "top center",
-                    toggleActions: "play none none reverse"
-                }
-            });
-        }
+        initTextReveal(aboutText);
 
         const cvButton = aboutSection.querySelector('.btn');
         if (cvButton) {
@@ -138,16 +159,8 @@ function initAnimations() {
 
     const contactSection = document.querySelector('#contact');
     if (contactSection) {
-        gsap.from(contactSection.querySelector('h2'), {
-            opacity: 0,
-            y: 30,
-            duration: 0.8,
-            scrollTrigger: {
-                trigger: contactSection,
-                start: "top center",
-                toggleActions: "play none none reverse"
-            }
-        });
+        const contactHeading = contactSection.querySelector('h1');
+        initTextReveal(contactHeading);
 
         gsap.from(contactSection.querySelectorAll('.contact-link'), {
             opacity: 0,

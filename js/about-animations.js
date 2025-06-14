@@ -6,7 +6,7 @@ function initAboutAnimations() {
         }
     });
 
-    const aboutText = document.querySelector('.about span');
+    const aboutText = document.querySelector('.about span', '.contact span');
     if (aboutText) {
         const text = aboutText.textContent;
         aboutText.textContent = '';
@@ -23,7 +23,7 @@ function initAboutAnimations() {
                     const charSpan = document.createElement('span');
                     charSpan.className = 'char';
                     charSpan.textContent = word[i];
-                    charSpan.style.display = 'inline-block';
+                    charSpan.style.display = 'inline';
                     wordSpan.appendChild(charSpan);
                 }
                 
