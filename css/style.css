@@ -83,6 +83,8 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -96,7 +98,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 20px;
+  padding: 1rem 2rem;
   position: relative;
 }
 
@@ -136,13 +138,14 @@ body {
 }
 
 #about .about {
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
   font-size: 5vw;
   line-height: 1.4;
 }
 #about .about span {
-  display: inline;
+  display: inline-block;
   white-space: normal;
 }
 #about .about span .word {
