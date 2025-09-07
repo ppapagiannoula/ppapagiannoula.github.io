@@ -3,7 +3,7 @@ class Navigation {
     this.nav = document.querySelector('.nav-container');
     this.themeToggle = document.querySelector('.theme-toggle');
     this.isDarkMode = localStorage.getItem('darkMode') === 'true';
-    
+
     this.init();
   }
 
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const targetId = link.getAttribute('href').substring(1);
       const targetSection = document.getElementById(targetId);
-      
+
       if (targetSection) {
         window.scrollTo({
           top: targetSection.offsetTop - 80,

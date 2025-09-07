@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
 function splitText(element) {
     const text = element.textContent;
     element.textContent = '';
-    
+
     for (let i = 0; i < text.length; i++) {
         const span = document.createElement('span');
         span.textContent = text[i];

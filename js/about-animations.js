@@ -10,7 +10,7 @@ function initAboutAnimations() {
     if (aboutText) {
         const text = aboutText.textContent;
         aboutText.textContent = '';
-        
+
         const words = text.split(/(\s+)/);
         words.forEach((word) => {
             if (word.trim() === '') {
@@ -18,7 +18,7 @@ function initAboutAnimations() {
             } else {
                 const wordSpan = document.createElement('span');
                 wordSpan.className = 'word';
-                
+
                 for (let i = 0; i < word.length; i++) {
                     const charSpan = document.createElement('span');
                     charSpan.className = 'char';
@@ -26,7 +26,7 @@ function initAboutAnimations() {
                     charSpan.style.display = 'inline';
                     wordSpan.appendChild(charSpan);
                 }
-                
+
                 aboutText.appendChild(wordSpan);
             }
         });
